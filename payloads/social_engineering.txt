@@ -1,0 +1,35 @@
+REM Social Engineering Demo - Fake Update Notification
+DELAY 2000
+GUI r
+DELAY 500
+STRING notepad
+ENTER
+DELAY 1000
+STRING IMPORTANT SECURITY UPDATE
+ENTER
+STRING ============================
+ENTER
+STRING 
+ENTER
+STRING Your system requires an immediate security update.
+ENTER
+STRING 
+ENTER
+STRING Please visit: https://security-update-portal[.]com
+ENTER
+STRING 
+ENTER
+STRING Do NOT restart your computer until the update is complete.
+ENTER
+STRING 
+ENTER
+STRING - BlueJack Security Team
+ENTER
+DELAY 3000
+REM Save file
+CTRL s
+DELAY 500
+STRING security_update.txt
+ENTER
+DELAY 500
+ALT F4

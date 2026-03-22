@@ -1,0 +1,23 @@
+REM macOS Payload - Opens Terminal and shows message
+DELAY 2000
+GUI SPACE
+DELAY 500
+STRING Terminal
+DELAY 500
+ENTER
+DELAY 1000
+STRING echo "BlueJack has successfully connected to this Mac!"
+ENTER
+DELAY 500
+STRING echo "This is a demonstration of Bluetooth HID attack capabilities."
+ENTER
+DELAY 500
+STRING echo "For security testing purposes only."
+ENTER
+DELAY 500
+STRING say "Your Bluetooth device has been compromised"
+ENTER
+DELAY 1000
+REM Exit terminal
+STRING exit
+ENTER

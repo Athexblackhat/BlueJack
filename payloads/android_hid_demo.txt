@@ -1,0 +1,24 @@
+REM Android HID Attack Demo
+REM Opens Chrome and navigates to test page
+DELAY 2000
+GUI n
+DELAY 1000
+STRING chrome
+ENTER
+DELAY 2000
+STRING https://www.google.com
+ENTER
+DELAY 2000
+TAB
+TAB
+TAB
+ENTER
+DELAY 1000
+STRING BlueJack Bluetooth HID Attack Test
+ENTER
+DELAY 1000
+REM Take screenshot (Android doesn't have built-in screenshot via keyboard, but we can simulate)
+GUI SPACE
+DELAY 500
+STRING Screenshot
+ENTER
