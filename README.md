@@ -101,10 +101,13 @@ Named after the concept of "jack" as in hijacking, BlueJack demonstrates the ris
 
 🚀 Installation
 
-
+```
 git clone https://github.com/Athexblackhat/BlueJack.git
+
 cd BlueJack
 
+python3 BlueJack.py
+```
 
 # Install system dependencies
 
